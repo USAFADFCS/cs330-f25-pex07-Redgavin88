@@ -8,7 +8,6 @@
 
 % The query to get the answer(s) or that there is no answer
 % ?- solve.
-
 % Each cadet saw a UFO on a different day
 cadet(c4c_smith).
 cadet(c4c_garcia).
@@ -30,7 +29,7 @@ solve :-
     all_different([TueCadet, WedCadet, ThuCadet, FriCadet]),
     
     ufo(TueUfo), ufo(WedUfo), ufo(ThuUfo), ufo(FriUfo),
-    all_different([TueUfo, WedUfo, ThuUFo, FriUfo]),
+    all_different([TueUfo, WedUfo, ThuUfo, FriUfo]),
     
     Triples = [ [TueCadet, tue, TueUfo],
                 [WedCadet, wed, WedUfo],
@@ -81,4 +80,3 @@ all_different([_]).
 tell(X, Y, Z) :-
     write('On '), write(Y), write(' '), write(X),
     write(' saw: '), write(Z), write('.'), nl.
-
