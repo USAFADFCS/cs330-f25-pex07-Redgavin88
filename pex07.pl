@@ -51,8 +51,8 @@ solve :-
     \+ member([c4c_jones, _, weather_ballon],  Triples),
     
     % 5. Friday’s sighting was made by either C4C Chen or the one who saw the fighter aircraft.
-    (member([c4c_chen, fri, _], Triples));
-    (member([_, fri, fighter_aircraft], Triples)),
+    ( member([c4c_chen, fri, _], Triples);
+      member([_, fri, fighter_aircraft], Triples) ),
     
     % 6. C4C Jones did not make their sighting on Tuesday.
     \+ member([c4c_jones, tue, _], Triples),
