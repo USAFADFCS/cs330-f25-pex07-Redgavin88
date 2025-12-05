@@ -1,14 +1,14 @@
 % pex5.pl
 % USAFA UFO Sightings 2024
 %
-% name: 
+% name: Gavin Smith
 %
-% Documentation: 
+% Documentation: I had Kaci Mcbrayer and Tanner Woodring look over my code for my syntax error and miss spelling of "balloon" and "fighter"
 %
 
 % The query to get the answer(s) or that there is no answer
 % ?- solve.
-% Each cadet saw a UFO on a different day
+% Each cadet saw a UFO on a different day.
 cadet(c4c_smith).
 cadet(c4c_garcia).
 cadet(c4c_chen).
@@ -19,7 +19,7 @@ day(wed).
 day(thu).
 day(fri).
 
-ufo(weather_ballon).
+ufo(weather_balloon).
 ufo(kite).
 ufo(fighter_aircraft).
 ufo(cloud).
@@ -37,7 +37,7 @@ solve :-
                 [FriCadet, fri, FriUfo] ],
     
     % 1. C4C Smith did not see a weather balloon, nor kite.
-    \+ member([c4c_smith, _, weather_balloons], Triples),
+    \+ member([c4c_smith, _, weather_balloon], Triples),
     \+ member([c4c_smith, _, kite], Triples),
     
     % 2. The one who saw the kite isn’t C4C Garcia. 
@@ -47,8 +47,8 @@ solve :-
     \+ member([_, tue, kite], Triples),
     
     % 4. Neither C4C Garcia nor C4C Jones saw the weather balloon.
-    \+ member([c4c_garcia, _, weather_ballon], Triples),
-    \+ member([c4c_jones, _, weather_ballon],  Triples),
+    \+ member([c4c_garcia, _, weather_balloon], Triples),
+    \+ member([c4c_jones, _, weather_balloon],  Triples),
     
     % 5. Friday’s sighting was made by either C4C Chen or the one who saw the fighter aircraft.
     ( member([c4c_chen, fri, _], Triples);
@@ -61,10 +61,10 @@ solve :-
     member([c4c_smith, _, cloud], Triples),
     
     %8. The fighter aircraft was spotted on Friday.
-    member([_, fri, figher_aircraft], Triples),
+    member([_, fri, fighter_aircraft], Triples),
     
     %9. The weather balloon was not spotted on Wednesday.
-    \+ member([_, wed, weather_ballon], Triples),
+    \+ member([_, wed, weather_balloon], Triples),
     
     tell(TueCadet, tue, TueUfo),
     tell(WedCadet, wed, WedUfo),
